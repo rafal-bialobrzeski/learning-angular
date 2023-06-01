@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
 import { ButtonComponent } from './button/button.component';
 
 @Component({
@@ -9,4 +9,13 @@ import { ButtonComponent } from './button/button.component';
 })
 export class AppComponent {
   title = 'new-angular-app';
+
+  counter = 0;
+  updateAppCounter($event: number) {
+    this.counter = $event;
+  }
+
+  receiveDataFromCounter($event: number) {
+    this.counter = $event;
+  }
 }

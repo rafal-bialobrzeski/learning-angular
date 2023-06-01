@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,10 +13,22 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  label: string = 'button-label';
   @Input() initialCount!: number;
+  @Output() updateCounterEvent = new EventEmitter<number>();
+
+  label: string = 'button-label';
   counter: number = 0;
+
+  ngOnInit() {
+    this.counter = this.initialCount;
+  }
+
   onSave() {
-    this.counter = this.initialCount + 1;
+    this.counter = this.counter + 1;
+    this.updateCounter(this.counter);
+  }
+
+  updateCounter(value: number) {
+    this.updateCounterEvent.emit(value);
   }
 }
