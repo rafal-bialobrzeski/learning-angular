@@ -1,7 +1,16 @@
 <!-- the app is working -->
 the app is working We're using Just-In-Time compilation.
 
-<app-counter1 (addToAppCounter)="receiveDataFromCounter($event)"></app-counter1>
-<app-counter2></app-counter2>
-<app-counter3></app-counter3>
+<app-counter1
+  (addToAppCounter)="receiveDataFromCounter($event)"
+  (updateInitialCounter)="setInitialCounter(2)"
+></app-counter1>
+<app-counter2
+  (addToAppCounter)="receiveDataFromCounter($event)"
+  (updateInitialCounter)="setInitialCounter(2)"
+></app-counter2>
+<app-counter3
+  (addToAppCounter)="receiveDataFromCounter($event)"
+  (updateInitialCounter)="setInitialCounter(2)"
+></app-counter3>
 <div>This should be a sum of all counters: {{ counter }}</div>

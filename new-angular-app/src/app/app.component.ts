@@ -11,11 +11,18 @@ export class AppComponent {
   title = 'new-angular-app';
 
   counter = 0;
+  //button component only
   updateAppCounter($event: number) {
     this.counter = $event;
   }
 
+  //counter component only
   receiveDataFromCounter($event: number) {
-    this.counter = $event;
+    this.counter = this.counter + 1;
+  }
+
+  //on initialization
+  setInitialCounter(initialCount: number) {
+    this.counter = this.counter + initialCount;
   }
 }
