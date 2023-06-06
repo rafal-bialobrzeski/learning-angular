@@ -1,4 +1,5 @@
 <app-button
   [initialCount]="5"
   (updateCounterEvent)="sendDataToApp($event)"
+  (updateInitialCounter)="sendInitialCounter($event)"
 ></app-button>

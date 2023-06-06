@@ -2,15 +2,15 @@
 the app is working We're using Just-In-Time compilation.
 
 <app-counter1
-  (addToAppCounter)="receiveDataFromCounter($event)"
-  (updateInitialCounter)="setInitialCounter(2)"
+  (addToAppCounter)="receiveDataFromCounter($event, 'counter1')"
+  (updateInitialCounter)="setInitialCounter($event, 'counter1')"
 ></app-counter1>
 <app-counter2
-  (addToAppCounter)="receiveDataFromCounter($event)"
-  (updateInitialCounter)="setInitialCounter(2)"
+  (addToAppCounter)="receiveDataFromCounter($event, 'counter2')"
+  (updateInitialCounter)="setInitialCounter($event, 'counter2')"
 ></app-counter2>
 <app-counter3
-  (addToAppCounter)="receiveDataFromCounter($event)"
-  (updateInitialCounter)="setInitialCounter(2)"
+  (addToAppCounter)="receiveDataFromCounter($event, 'counter3')"
+  (updateInitialCounter)="setInitialCounter($event, 'counter3')"
 ></app-counter3>
 <div>This should be a sum of all counters: {{ counter }}</div>

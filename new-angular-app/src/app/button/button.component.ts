@@ -4,6 +4,7 @@ import {
   EventEmitter,
   Input,
   Output,
+  ChangeDetectorRef
 } from '@angular/core';
 
 @Component({
